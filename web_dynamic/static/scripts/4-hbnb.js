@@ -28,7 +28,6 @@ $(document).ready(function() {
     url: 'http://0.0.0.0:5001/api/v1/places_search/',
     data: JSON.stringify({}),
     contentType: "application/json",
-    traditional: true,
     success: function (data) {
       for (cost place in data){
         const template = `<article>
@@ -51,5 +50,15 @@ $(document).ready(function() {
         $('section.places').append(template);
       }
     }
+  });
+  $("p").click(function(){
+    $.ajax ({
+      type: 'POST',
+      url: 'http://0.0.0.0:5001/api/v1/places_search/',
+      data: JSON.stringify(dict),
+      contentType: "application/json",
+      success: function (data) {
+      }
+    });
   });
 });
