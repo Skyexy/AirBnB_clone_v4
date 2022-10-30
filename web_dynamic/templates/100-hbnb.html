@@ -26,10 +26,10 @@
 	    <ul>
 	      {% for state in states %}
 	      <li>
-          <h2><input type="checkbox" data-id="{{state.id}}" data-name="{{state.name}}"></h2>
+          <h2><input type="checkbox" class="stateBox" data-id="{{state.id}}" data-name="{{state.name}}"></h2>
           <ul>
             {% for city in state[1] %}
-            <li><input type="checkbox" data-id="{{city.id}}" data-name="{{city.id}}"></li>
+            <li><input type="checkbox" class="citybox" data-id="{{city.id}}" data-name="{{city.id}}"></li>
             {% endfor %}
           </ul>
         </li>
@@ -44,7 +44,7 @@
 	    <ul>
 	      {% for amenity in amenities %}
 	      <li>
-          <input type="checkbox" data-id= "{{amenity.id" data-name= "{{amenity.name}}">
+          <input type="checkbox" data-id= "{{amenity.id}}" data-name= "{{amenity.name}}">
         </li>
 	      {% endfor %}
 	    </ul>
