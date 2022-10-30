@@ -23,7 +23,13 @@ $(document).ready(function() {
        $('div#api_status').removeClass('available')
     }
   });
-  $.post( "ajax/test.html", function( data ) {
-    $( ".result" ).html( data );
-  });
+  $.ajax({
+            type: 'POST',
+            url: 'http://0.0.0.0:5001/api/v1/places_search/',
+            data: curl "http://0.0.0.0:5001/api/v1/places_search" -XPOST -H "Content-Type: application/json" -d '{}',
+            contentType: "application/json",
+            traditional: true,
+            success: function (data) {
+            }
+        });
 });
